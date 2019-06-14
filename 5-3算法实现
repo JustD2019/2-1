@@ -1,0 +1,51 @@
+#include<stdio.h> 
+#define M 5
+#define MAX 2000 
+ 
+void select(int num,int s[],int f[],int state[]){
+ 
+	int preStart=0;
+	int preFinal=MAX;
+	int i;
+	int temp;
+	int OK=1;
+	int sel[M];//用来储存相容的活动编号 
+	int selNum=0;
+	
+		
+	while(OK){
+		OK=0;
+		for(i=0;i<M;i++){
+				
+			if(f[i]<preFinal&&s[i]>=preStart&&state[i]==0){//寻找开始时间合适地情况下结束时间最早者 
+				preFinal=f[i];
+				temp=i;
+				OK=1;
+				printf("%d-------------->%d\n",s[i],f[i]); 
+				state[i]=1;
+			}	
+		}
+		
+		if(preFinal!=MAX){  //变量的重新赋值 
+			sel[selNum++]=temp;
+			preStart=f[temp];
+		    preFinal=MAX;
+		}
+	} 
+}
+ 
+int main(){
+	int s[]={1,12,25,27,36};
+	int f[]={23,28,35,80,50};
+	int state[]={0,0,0,0,0};
+	int count=0;
+	int i;
+for( i=0;i<M;i++){
+		if(state[i]==0){//判断的目的是知道所有的活动都排完才结束                                                                                    
+			select(M,s,f,state);
+			count++;
+		}
+	}
+	printf("最少会场数为:%d\n",count);
+}                                                                                                                                      
+
