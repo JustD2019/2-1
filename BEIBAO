@@ -61,7 +61,7 @@ int main()
 			scanf("%lf",&v[i]);
 	
 	for(i=0;i<grp;i++){
-		printf("请输入第%d个属性: ",i+1);
+		printf("请输入第%d组的属性: ",i+1);
 		for(j=0;j<num;j++)
 			scanf("%d",&w[i][j]);
 	}
