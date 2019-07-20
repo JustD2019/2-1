@@ -29,7 +29,7 @@ void getprice(int num,int grp,int j)
 	}
 	if(!flag){   //如果标志为0 则执行
 		for(i=0;i<grp;i++)
-        	tw[i]+=w[i][j];   //循环计算grp行 i+1列装入背包的现在的容量
+        	tw[i]+=w[i][j];   //循环计算grp行 j+1列装入背包的现在的容量
 
 		//计算目前总价值
         tv+=v[j];
