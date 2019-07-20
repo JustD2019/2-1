@@ -73,6 +73,6 @@ int main()
 	//调用函数选最优价值
 	getprice(num,grp,0);
     //输出最优价值
-    printf("最大价值为%.3lf元\n",bestprice);
+    printf("最大价值为%.3lf\n",bestprice);
     return 0;
 }
